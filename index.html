@@ -6,17 +6,19 @@
     <title>MENS WATCH CATALOG</title>
     <style>
         body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fff; color: #333; margin: 0; padding: 0; }
-        header { text-align: center; padding: 40px 0; border-bottom: 1px solid #eee; background-color: #fff; }
+        header { text-align: center; padding: 40px 0; background-color: #fff; }
         .site-title { font-weight: 200; letter-spacing: 4px; text-transform: uppercase; margin: 0; font-size: 24px; color: #000; }
         .sub-title { font-size: 11px; color: #999; margin-top: 10px; letter-spacing: 1px; }
+
+        /* トップ画像のスタイル */
+        .top-banner { width: 100%; max-height: 400px; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #eee; background-color: #000; }
+        .top-banner img { width: 100%; height: auto; object-fit: cover; }
         
-        /* カテゴリー欄：縦1列に並べる設定 */
         .category-container { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 30px 20px; background-color: #fafafa; }
         .category-btn { width: 100%; max-width: 250px; padding: 12px 0; border: 1px solid #ddd; background: #fff; font-size: 13px; border-radius: 2px; color: #555; text-align: center; text-decoration: none; }
         
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
         .item { border: 1px solid #eee; padding: 20px; text-align: center; background: #fff; }
-        .item-img-placeholder { width: 100%; aspect-ratio: 1/1; background-color: #f9f9f9; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; color: #ccc; font-size: 13px; }
         .btn { display: inline-block; margin-top: 15px; padding: 12px 24px; background: #000; color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 1px; }
     </style>
 </head>
@@ -27,18 +29,23 @@
     <div class="sub-title">厳選された時計コレクション</div>
 </header>
 
+<div class="top-banner">
+    <img src="ここに画像ファイル名を貼り付け" alt="Watch Top Image">
+</div>
+
 <div class="category-container">
     <div class="category-btn">クォーツ ２針 ３針</div>
     <div class="category-btn">クォーツ クロノグラフ</div>
     <div class="category-btn">オートマチック</div>
     <div class="category-btn">オートマチック GMT</div>
+    <div class="category-btn">手巻き</div>
     <div class="category-btn">デジタルアナログ</div>
     <div class="category-btn">デジタル</div>
 </div>
 
 <div class="gallery">
     <div class="item">
-        <div class="item-img-placeholder">ここに時計の写真が表示されます</div>
+        <p>ここに個別の時計写真が表示されます</p>
         <div class="btn">AliExpressで詳細を見る</div>
     </div>
 </div>
