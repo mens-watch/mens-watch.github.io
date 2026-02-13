@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MENS WATCH CATALOG</title>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fff; color: #333; margin: 0; padding: 0; }
-        header { text-align: center; padding: 40px 0; background-color: #fff; }
-        .site-title { font-weight: 200; letter-spacing: 4px; text-transform: uppercase; margin: 0; font-size: 24px; color: #000; }
-        .sub-title { font-size: 11px; color: #999; margin-top: 10px; letter-spacing: 1px; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fcfcfc; color: #333; margin: 0; padding: 0; }
+        
+        /* ヘッダー部分を少しリッチに */
+        header { text-align: center; padding: 50px 20px 30px; background-color: #fff; }
+        .site-title { font-weight: 300; letter-spacing: 5px; text-transform: uppercase; margin: 0; font-size: 22px; color: #000; }
+        .sub-title { font-size: 10px; color: #888; margin-top: 12px; letter-spacing: 0.5px; }
 
-        /* トップ画像のスタイル */
-        .top-banner { width: 100%; max-height: 400px; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #eee; background-color: #000; }
-        .top-banner img { width: 100%; height: auto; object-fit: cover; }
+        /* アイコンを強調 */
+        .profile-area { text-align: center; padding: 20px 0; background-color: #fff; }
+        .profile-icon { width: 100px; height: 100px; border-radius: 50%; border: 1px solid #eee; padding: 3px; object-fit: cover; }
         
-        .category-container { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 30px 20px; background-color: #fafafa; }
-        .category-btn { width: 100%; max-width: 250px; padding: 12px 0; border: 1px solid #ddd; background: #fff; font-size: 13px; border-radius: 2px; color: #555; text-align: center; text-decoration: none; }
+        /* カテゴリー部分に薄いグレーを敷いて引き締める */
+        .category-container { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 40px 20px; background-color: #f7f7f7; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .category-btn { width: 100%; max-width: 280px; padding: 15px 0; border: 1px solid #e0e0e0; background: #fff; font-size: 12px; letter-spacing: 1px; border-radius: 0px; color: #444; text-align: center; text-decoration: none; transition: 0.3s; }
         
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
-        .item { border: 1px solid #eee; padding: 20px; text-align: center; background: #fff; }
-        .btn { display: inline-block; margin-top: 15px; padding: 12px 24px; background: #000; color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 1px; }
+        /* 商品カード */
+        .gallery { padding: 40px 20px; display: flex; justify-content: center; }
+        .item { width: 100%; max-width: 350px; border: 1px solid #eee; padding: 25px; text-align: center; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+        .item-text { color: #999; font-size: 12px; margin-bottom: 20px; }
+        .btn { display: inline-block; padding: 14px 30px; background: #000; color: #fff; text-decoration: none; font-size: 11px; letter-spacing: 2px; }
     </style>
 </head>
 <body>
@@ -29,8 +34,8 @@
     <div class="sub-title">かっこいい 腕時計 安い 低価格 海外 メンズ ウォッチ</div>
 </header>
 
-<div class="top-banner">
-    <img src="20260213-3.png" alt="Watch Top Image">
+<div class="profile-area">
+    <img src="TW_..._2.JPG" class="profile-icon" alt="Profile">
 </div>
 
 <div class="category-container">
@@ -45,7 +50,7 @@
 
 <div class="gallery">
     <div class="item">
-        <p>ここに個別の時計写真が表示されます</p>
+        <div class="item-text">ここに個別の時計写真が表示されます</div>
         <div class="btn">AliExpressで詳細を見る</div>
     </div>
 </div>
