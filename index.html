@@ -3,60 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MENS WATCH CATALOG</title>
+    <title>メンズウォッチカタログ｜安くてかっこいい厳選腕時計セレクト</title>
     <style>
         body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fff; color: #333; margin: 0; padding: 0; }
-        header { text-align: center; padding: 40px 0; background-color: #fff; }
-        .site-title { font-weight: 200; letter-spacing: 4px; text-transform: uppercase; margin: 0; font-size: 24px; color: #000; }
-        .sub-title { font-size: 14px; color: #999; margin-top: 10px; letter-spacing: 1px; }
+        header { text-align: center; padding: 40px 20px; background-color: #fff; }
+        
+        /* 1行目：カタカナタイトル */
+        .site-title-main { font-weight: bold; letter-spacing: 2px; margin: 0; font-size: 26px; color: #000; }
+        
+        /* 2行目：英語タイトル */
+        .site-title-sub { font-weight: 200; letter-spacing: 4px; text-transform: uppercase; margin: 5px 0 0; font-size: 18px; color: #666; }
+        
+        /* 3行目：キャッチコピー */
+        .site-description { font-size: 15px; color: #333; margin-top: 15px; letter-spacing: 1px; font-weight: bold; }
+
+        /* プロフィール文章エリア */
+        .profile-box { background-color: #fafafa; padding: 25px 20px; margin: 25px auto; border-top: 1px solid #eee; border-bottom: 1px solid #eee; max-width: 600px; }
+        .profile-text { font-size: 13px; color: #555; line-height: 1.8; margin: 0; text-align: center; letter-spacing: 0.5px; }
+
+        /* PR表示 */
+        .pr-label { font-size: 10px; color: #aaa; margin-top: 10px; letter-spacing: 1px; }
 
         /* トップ画像のスタイル */
         .top-banner { width: 100%; max-height: 400px; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #eee; background-color: #000; }
         .top-banner img { width: 100%; height: auto; object-fit: cover; }
         
+        /* カテゴリーボタン */
         .category-container { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 30px 20px; background-color: #fafafa; }
-        .category-btn { width: 100%; max-width: 250px; padding: 12px 0; border: 1px solid #ddd; background: #fff; font-size: 13px; border-radius: 2px; color: #555; text-align: center; text-decoration: none; }
+        .category-btn { width: 100%; max-width: 250px; padding: 12px 0; border: 1px solid #ddd; background: #fff; font-size: 13px; border-radius: 2px; color: #555; text-align: center; text-decoration: none; transition: 0.3s; }
+        .category-btn:hover { background-color: #f0f0f0; }
         
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
-        .item { border: 1px solid #eee; padding: 20px; text-align: center; background: #fff; }
-        .btn { display: inline-block; margin-top: 15px; padding: 12px 24px; background: #000; color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 1px; }
+        footer { text-align: center; padding: 40px 20px 20px; background-color: #fff; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="site-title">Mens Watch Catalog</div>
-    <div class="sub-title">かっこいい 腕時計 安い 低価格 海外 メンズ ウォッチ</div>
-    <div style="font-size: 10px; color: #aaa; margin-top: 10px; letter-spacing: 1px;">
-        このサイトにはプロモーションが含まれています
-    </div>
-</header>
+    <div class="site-title-main">メンズ ウォッチ カタログ</div>
+    
+    <div class="site-title-sub">MENS WATCH CATALOG</div>
+    
+    <div class="site-description">かっこいい 腕時計 安い 低価格 海外 メンズ ウォッチ</div>
 
+    <div class="profile-box">
+        <p class="profile-text">
+            海外の<b>日本未発売モデル</b>を中心に、<b>低価格</b>ながら<b>高級感</b>のある<b>メンズウォッチ</b>を厳選。<b>機械式（自動巻き・手巻き）</b>から<b>クロノグラフ</b>まで、<b>コスパ</b>最強の<b>腕時計</b>カタログとして、あなたのこだわりに応える一本をご提案します。
+        </p>
+    </div>
+
+    <div class="pr-label">※本ページはプロモーションが含まれています</div>
+</header>
 
 <div class="top-banner">
     <img src="20260213-6.JPG" alt="Watch Top Image">
 </div>
 
 <div class="category-container">
-    <div class="category-btn">クォーツ ２針 ３針</div>
-    <div class="category-btn">クォーツ クロノグラフ</div>
-    <div class="category-btn">オートマチック</div>
-    <div class="category-btn">オートマチック GMT</div>
-    <div class="category-btn">手巻き</div>
-    <div class="category-btn">デジタルアナログ</div>
-    <div class="category-btn">デジタル</div>
-    <div class="category-btn">全ての時計</div>
+    <a href="#" class="category-btn">クォーツ ２針 ３針</a>
+    <a href="#" class="category-btn">クォーツ クロノグラフ</a>
+    <a href="#" class="category-btn">オートマチック</a>
+    <a href="#" class="category-btn">オートマチック GMT</a>
+    <a href="#" class="category-btn">手巻き</a>
+    <a href="#" class="category-btn">デジタルアナログ</a>
+    <a href="#" class="category-btn">デジタル</a>
+    <a href="#" class="category-btn" style="font-weight: bold; border-color: #999;">全ての時計</a>
 </div>
 
-<div class="gallery">
-    <div class="item">
-        
-    </div>
-</div>
-<footer style="text-align: center; padding: 40px 20px 20px; background-color: #fff;">
-    <p style="font-size: 10px; color: #bbb; letter-spacing: 1px;">
-        
-    </p>
+<footer>
     <p style="font-size: 9px; color: #ccc; margin-top: 10px;">
         &copy; 2026 Mens Watch Catalog
     </p>
