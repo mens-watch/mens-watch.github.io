@@ -8,31 +8,23 @@
         body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fff; color: #333; margin: 0; padding: 0; }
         header { text-align: center; padding: 40px 20px; background-color: #fff; }
         
-        /* 1行目：カタカナタイトル（細字に修正） */
         .site-title-main { font-weight: 200; letter-spacing: 2px; margin: 0; font-size: 26px; color: #000; }
-        
-        /* 2行目：英語タイトル */
         .site-title-sub { font-weight: 200; letter-spacing: 4px; text-transform: uppercase; margin: 5px 0 0; font-size: 18px; color: #666; }
         
-        /* 3行目：キャッチコピー（細字に修正） */
-        .site-description { font-size: 14px; color: #333; margin-top: 15px; letter-spacing: 1px; font-weight: 200; }
+        /* 3行目：2段にした時にバランスが良いよう調整 */
+        .site-description { font-size: 14px; color: #333; margin-top: 15px; letter-spacing: 1px; font-weight: 200; line-height: 1.8; }
 
-        /* プロフィール文章エリア（背景枠を削除） */
         .profile-area { padding: 20px 20px; margin: 10px auto; max-width: 600px; }
         .profile-text { font-size: 13px; color: #555; line-height: 1.8; margin: 0; text-align: center; letter-spacing: 0.5px; font-weight: 200; }
-        /* 太字を解除するための設定 */
-        .profile-text b { font-weight: 200; color: #555; }
 
-        /* PR表示 */
         .pr-label { font-size: 10px; color: #aaa; margin-top: 20px; letter-spacing: 1px; font-weight: 200; }
 
-        /* トップ画像のスタイル */
         .top-banner { width: 100%; max-height: 400px; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #eee; background-color: #000; }
         .top-banner img { width: 100%; height: auto; object-fit: cover; }
         
-        /* カテゴリーボタン（細字に統一） */
+        /* カテゴリーボタン：文字色をしっかり統一 */
         .category-container { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 30px 20px; background-color: #fafafa; }
-        .category-btn { width: 100%; max-width: 250px; padding: 12px 0; border: 1px solid #ddd; background: #fff; font-size: 13px; border-radius: 2px; color: #555; text-align: center; text-decoration: none; font-weight: 200; transition: 0.3s; }
+        .category-btn { width: 100%; max-width: 250px; padding: 12px 0; border: 1px solid #ddd; background: #fff; font-size: 13px; border-radius: 2px; color: #444; text-align: center; text-decoration: none; font-weight: 200; transition: 0.3s; }
         
         footer { text-align: center; padding: 40px 20px 20px; background-color: #fff; }
     </style>
@@ -41,10 +33,12 @@
 
 <header>
     <h1 class="site-title-main">メンズ ウォッチ カタログ</h1>
-    
     <div class="site-title-sub">MENS WATCH CATALOG</div>
     
-    <div class="site-description">かっこいい 腕時計 安い 低価格 海外 メンズ ウォッチ</div>
+    <div class="site-description">
+        かっこいい 腕時計<br>
+        安い 低価格 海外 メンズ ウォッチ
+    </div>
 
     <div class="profile-area">
         <p class="profile-text">
