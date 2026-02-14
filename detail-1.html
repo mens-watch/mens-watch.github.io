@@ -14,7 +14,6 @@
             padding: 0;
         }
 
-        /* 2層目と共通のタイトルデザイン（リンク化） */
         .header-link {
             display: inline-block;
             text-decoration: none;
@@ -40,7 +39,7 @@
         .pair-container { 
             display: flex; 
             width: 100%; 
-            max-width: 1000px; /* 詳細ページなので迫力重視で大きめ */
+            max-width: 1000px; 
             margin: 0 auto;
         }
 
@@ -58,11 +57,13 @@
             margin: 0 auto;
         }
 
+        /* キャプションを左寄せに変更 */
         .caption {
             font-size: 16px;
             line-height: 1.8;
             margin-bottom: 30px;
             color: #666;
+            text-align: left; /* センターから左寄せに調整 */
         }
 
         .buy-btn {
@@ -73,6 +74,7 @@
             text-decoration: none;
             letter-spacing: 2px;
             transition: all 0.3s;
+            font-size: 15px; /* 日本語に合わせて少し調整 */
         }
 
         .buy-btn:hover {
@@ -80,7 +82,6 @@
             color: #fff;
         }
 
-        /* プロモーション表記とコピーライト */
         .promotion-text {
             font-size: 10px;
             color: #bbb;
@@ -138,7 +139,7 @@
             職人の手仕事が宿る、この時計の更なる詳細（価格・スペック）は、<br>
             AliExpressの公式ページにてご確認いただけます。
         </p>
-        <a href="https://www.aliexpress.com/" class="buy-btn">VIEW ON AliExpress</a>
+        <a href="https://www.aliexpress.com/" class="buy-btn">AliExpressの公式ページを見る</a>
     </div>
 
     <div class="promotion-text">
