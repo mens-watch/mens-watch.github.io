@@ -5,39 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>手巻き時計一覧</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background-color: #f4f4f4; }
-        .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-        .item { background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px; }
-        img { width: 100%; height: auto; border-radius: 4px; }
-        .back-link { margin-top: 30px; display: inline-block; text-decoration: none; color: #007bff; }
+        /* 全体の背景と文字の設定（表紙の雰囲気に合わせる） */
+        body { 
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; 
+            text-align: center; 
+            background-color: #f8f9fa; /* 少し上品な薄いグレー */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 一番上のタイトル（表紙のフォント感に合わせる） */
+        h1 { 
+            font-size: 24px;
+            letter-spacing: 2px; /* 文字の間隔を少し広げて上品に */
+            margin: 40px 0 20px;
+            font-weight: normal;
+        }
+
+        /* 2枚セットを並べるための設定 */
+        .gallery { 
+            display: flex; 
+            flex-direction: column; /* 縦に並べる */
+            align-items: center; 
+            gap: 20px; 
+            padding: 20px; 
+        }
+
+        /* 2枚1セットを囲む白枠の箱 */
+        .pair-container { 
+            background: white; 
+            padding: 15px; 
+            border-radius: 4px; /* わずかに角を丸める */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 柔らかい影 */
+            display: flex; /* 中身を横に並べる */
+            gap: 10px; /* 写真と写真の間隔 */
+            max-width: 90%; /* スマホで見てもはみ出さないように */
+        }
+
+        /* 写真の設定 */
+        .pair-container img { 
+            width: 50%; /* 2枚で半分ずつ */
+            height: auto; 
+            object-fit: cover; 
+            display: block;
+        }
+
+        .back-link { 
+            margin: 40px 0; 
+            display: inline-block; 
+            text-decoration: none; 
+            color: #666; 
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>手巻き時計 コレクション</h1>
-
-    <div class="gallery">
-        <div class="item">
-            <a href="detail-1.html">
-                <img src="202602141348 (1).JPG">
-                <p>商品No.1</p>
-            </a>
-        </div>
-        <div class="item">
-            <a href="detail-2.html">
-                <img src="202602141348 (2).JPG">
-                <p>商品No.2</p>
-            </a>
-        </div>
-        <div class="item">
-            <a href="detail-3.html">
-                <img src="202602141348 (3).JPG">
-                <p>商品No.3</p>
-            </a>
-        </div>
+    <h1>MANUAL WINDING</h1> <div class="gallery">
+        <div class="pair-container">
+            <img src="202602141348 (1).JPG">
+            <img src="202602141348 (2).JPG">
         </div>
 
-    <a href="index.html" class="back-link">← トップページへ戻る</a>
+        <div class="pair-container">
+            <img src="202602141348 (3).JPG">
+            <img src="202602141348 (4).JPG">
+        </div>
+
+        <div class="pair-container">
+            <img src="202602141348 (5).JPG">
+            <img src="202602141348 (6).JPG">
+        </div>
+
+        </div>
+
+    <a href="index.html" class="back-link">← BACK TO TOP</a>
 
 </body>
 </html>
