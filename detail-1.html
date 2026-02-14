@@ -1,7 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Detail</title>
+    <style>
+        body { 
+            font-family: "Helvetica Neue", Arial, sans-serif; 
+            text-align: center; 
+            background-color: #ffffff; 
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 { 
+            font-size: 20px;
+            letter-spacing: 3px;
+            margin: 40px 0;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        /* ギャラリー全体の枠組み */
+        .gallery { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            width: 100%;
+        }
+
+        /* 2枚を横に並べるための設定 */
+        .pair-container { 
+            display: flex; 
+            width: 100%; 
+            max-width: 1000px; /* パソコンで見た時に広がりすぎない設定 */
+            margin: 0 auto;
+        }
+
+        /* 画像1枚あたりの設定（ここが重要です！） */
+        .pair-container img { 
+            width: 50% !important; /* 必ず横幅の半分にする */
+            height: auto; 
+            display: block;
+            object-fit: cover; 
+            cursor: zoom-in;
+        }
+
+        .info-section {
+            padding: 60px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .caption {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid #333;
+            color: #333;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+
+        .buy-btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MANUAL WINDING</h1>
+
     <div class="gallery">
         <div class="pair-container">
+            <img src="202602141348 (1).JPG" onclick="window.open(this.src)">
+            <img src="202602141348 (2).JPG" onclick="window.open(this.src)">
+        </div>
+        <div class="pair-container">
+            <img src="202602141348 (3).JPG" onclick="window.open(this.src)">
+            <img src="202602141348 (4).JPG" onclick="window.open(this.src)">
+        </div>
+        <div class="pair-container">
+            <img src="202602141348 (5).JPG" onclick="window.open(this.src)">
+            <img src="202602141348 (6).JPG" onclick="window.open(this.src)">
+        </div>
+        <div class="pair-container">
+            <img src="202602141348 (7).JPG" onclick="window.open(this.src)">
+            <img src="202602141348 (8).JPG" onclick="window.open(this.src)">
+        </div>
+        <div class="pair-container">
+            <img src="202602141348 (9).JPG" onclick="window.open(this.src)">
+            <img src="202602141348 (10).JPG" onclick="window.open(this.src)">
+        </div>
+        <div class="pair-container">
+            <img src="202602141348 (11).JPG" onclick="window.open(this.src)">
+            <img src="202602141348 (12).JPG" onclick="window.open(this.src)">
+        </div>
+        <div class="pair-container">
             <img src="202602141348 (13).JPG" onclick="window.open(this.src)">
-            <img src="202602141348 (1).JPG" onclick="window.open(this.src)"> </div>
+            <img src="202602141348 (1).JPG" onclick="window.open(this.src)">
+        </div>
     </div>
 
     <div class="info-section">
@@ -9,6 +116,8 @@
             職人の手仕事が宿る、この時計の更なる詳細（価格・スペック）は、<br>
             AliExpressの公式ページにてご確認いただけます。
         </p>
-        
-        <a href="https://www.aliexpress.com/..." class="buy-btn">VIEW ON AliExpress</a>
+        <a href="https://www.aliexpress.com/" class="buy-btn">VIEW ON AliExpress</a>
     </div>
+
+</body>
+</html>
