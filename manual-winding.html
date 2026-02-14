@@ -8,7 +8,7 @@
         body { 
             font-family: "Helvetica Neue", Arial, sans-serif; 
             text-align: center; 
-            background-color: #ffffff; 
+            background-color: #fcfcfc; /* 3層目と変えて、ほんの少しだけグレーに */
             color: #333;
             margin: 0;
             padding: 0;
@@ -17,57 +17,54 @@
         h1 { 
             font-size: 20px;
             letter-spacing: 3px;
-            margin: 40px 0;
+            margin: 50px 0 30px;
             font-weight: normal;
-            text-transform: uppercase;
         }
 
-        /* 商品を縦に並べるエリア */
+        /* カタログ全体の余白 */
         .gallery { 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            gap: 50px; /* 商品セットごとの間隔を広くあける */
+            gap: 60px; /* 商品ごとの間隔を大きくあける */
             padding: 20px 20px 100px; 
         }
 
-        /* 2枚セットを囲むリンク（1つの商品ボタン） */
+        /* 2枚セットを囲むリンク（ここが重要：幅を600pxに制限） */
         .product-link {
             text-decoration: none;
             color: inherit;
             display: block;
-            width: 90%;
-            max-width: 600px; /* 3層目より少し小さくしてカタログらしく */
+            width: 85%; /* 画面の両端に余白を作る */
+            max-width: 500px; /* パソコンで見ても大きくしすぎない */
             transition: transform 0.3s ease;
         }
 
-        /* タップやホバーで少し浮き上がらせる */
         .product-link:hover {
             transform: translateY(-5px);
         }
 
-        /* 2枚の写真を囲む枠 */
+        /* 2枚の写真を囲む「白い箱」 */
         .pair-container { 
             display: flex; 
             background: white; 
-            border: 1px solid #eee; /* 薄い枠線で1つの塊であることを強調 */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* ほんのり影をつけて立体感 */
-            overflow: hidden;
+            padding: 10px; /* 写真の周りに白い縁（フチ）を作る */
+            border: 1px solid #eee; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* 3層目にはない影をつけて「ボタン」らしく */
         }
 
         .pair-container img { 
-            width: 50% !important; /* 2枚横並びを強制 */
+            width: 50% !important; 
             height: auto; 
             display: block;
             object-fit: cover;
         }
 
-        /* セットの下に添える文字 */
         .view-more {
             display: block;
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 2px;
-            color: #888;
+            color: #999;
             margin-top: 15px;
             text-transform: uppercase;
         }
@@ -83,7 +80,7 @@
                 <img src="202602141348 (1).JPG">
                 <img src="202602141348 (2).JPG">
             </div>
-            <span class="view-more">View Details →</span>
+            <span class="view-more">ITEM 01 - VIEW DETAILS</span>
         </a>
 
         </div>
