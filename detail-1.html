@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item Detail</title>
+    <title>Item Detail - MENS WATCH CATALOG</title>
     <style>
         body { 
             font-family: "Helvetica Neue", Arial, sans-serif; 
@@ -14,15 +14,22 @@
             padding: 0;
         }
 
-        h1 { 
-            font-size: 20px;
-            letter-spacing: 3px;
-            margin: 40px 0;
-            font-weight: normal;
-            text-transform: uppercase;
+        /* 2層目と共通のタイトルデザイン（リンク化） */
+        .header-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
+            margin: 50px 0 30px;
         }
 
-        /* ギャラリー全体の枠組み */
+        .header-link h1 { 
+            font-size: 20px;
+            letter-spacing: 3px;
+            font-weight: normal;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
         .gallery { 
             display: flex; 
             flex-direction: column; 
@@ -30,17 +37,15 @@
             width: 100%;
         }
 
-        /* 2枚を横に並べるための設定 */
         .pair-container { 
             display: flex; 
             width: 100%; 
-            max-width: 1000px; /* パソコンで見た時に広がりすぎない設定 */
+            max-width: 1000px; /* 詳細ページなので迫力重視で大きめ */
             margin: 0 auto;
         }
 
-        /* 画像1枚あたりの設定（ここが重要です！） */
         .pair-container img { 
-            width: 50% !important; /* 必ず横幅の半分にする */
+            width: 50% !important; 
             height: auto; 
             display: block;
             object-fit: cover; 
@@ -74,11 +79,28 @@
             background-color: #333;
             color: #fff;
         }
+
+        /* プロモーション表記とコピーライト */
+        .promotion-text {
+            font-size: 10px;
+            color: #bbb;
+            margin-top: 80px;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            padding: 20px 0 60px;
+            font-size: 10px;
+            letter-spacing: 1px;
+            color: #999;
+        }
     </style>
 </head>
 <body>
 
-    <h1>MANUAL WINDING</h1>
+    <a href="index.html" class="header-link">
+        <h1>MENS WATCH CATALOG</h1>
+    </a>
 
     <div class="gallery">
         <div class="pair-container">
@@ -118,6 +140,14 @@
         </p>
         <a href="https://www.aliexpress.com/" class="buy-btn">VIEW ON AliExpress</a>
     </div>
+
+    <div class="promotion-text">
+        ※本ページはプロモーションが含まれています
+    </div>
+
+    <footer>
+        &copy; 2026 MENS WATCH CATALOG
+    </footer>
 
 </body>
 </html>
