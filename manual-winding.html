@@ -3,84 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>手巻き時計一覧</title>
+    <title>Manual Winding Collection</title>
     <style>
-        /* 全体の背景と文字の設定（表紙の雰囲気に合わせる） */
         body { 
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; 
+            font-family: "Helvetica Neue", Arial, sans-serif; 
             text-align: center; 
-            background-color: #f8f9fa; /* 少し上品な薄いグレー */
+            background-color: #ffffff; /* 背景白で統一 */
             color: #333;
             margin: 0;
             padding: 0;
         }
 
-        /* 一番上のタイトル（表紙のフォント感に合わせる） */
         h1 { 
-            font-size: 24px;
-            letter-spacing: 2px; /* 文字の間隔を少し広げて上品に */
-            margin: 40px 0 20px;
+            font-size: 20px;
+            letter-spacing: 3px;
+            margin: 40px 0;
             font-weight: normal;
         }
 
-        /* 2枚セットを並べるための設定 */
         .gallery { 
             display: flex; 
-            flex-direction: column; /* 縦に並べる */
+            flex-direction: column; 
             align-items: center; 
-            gap: 20px; 
+            gap: 30px; /* セットごとの間隔 */
             padding: 20px; 
         }
 
-        /* 2枚1セットを囲む白枠の箱 */
-        .pair-container { 
-            background: white; 
-            padding: 15px; 
-            border-radius: 4px; /* わずかに角を丸める */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 柔らかい影 */
-            display: flex; /* 中身を横に並べる */
-            gap: 10px; /* 写真と写真の間隔 */
-            max-width: 90%; /* スマホで見てもはみ出さないように */
+        /* 2枚1セットのリンクエリア */
+        .product-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            transition: transform 0.3s ease; /* 動きを滑らかに */
         }
 
-        /* 写真の設定 */
+        /* セットに触れた時の動き */
+        .product-link:hover {
+            transform: translateY(-5px); /* 少し上に浮き上がる */
+        }
+
+        .pair-container { 
+            display: flex; 
+            background: white; 
+            border: 1px solid #eee; /* 控えめな枠線で1つの塊に見せる */
+            overflow: hidden;
+        }
+
         .pair-container img { 
-            width: 50%; /* 2枚で半分ずつ */
+            width: 50%; 
             height: auto; 
-            object-fit: cover; 
+            object-fit: cover;
             display: block;
         }
 
-        .back-link { 
-            margin: 40px 0; 
-            display: inline-block; 
-            text-decoration: none; 
-            color: #666; 
-            font-size: 14px;
+        /* セットの下に添える「詳細を見る」のサイン */
+        .view-more {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #999;
+            margin-top: 10px;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
-    <h1>MANUAL WINDING</h1> <div class="gallery">
-        <div class="pair-container">
-            <img src="202602141348 (1).JPG">
-            <img src="202602141348 (2).JPG">
-        </div>
+    <h1>MANUAL WINDING</h1>
 
-        <div class="pair-container">
-            <img src="202602141348 (3).JPG">
-            <img src="202602141348 (4).JPG">
-        </div>
-
-        <div class="pair-container">
-            <img src="202602141348 (5).JPG">
-            <img src="202602141348 (6).JPG">
-        </div>
+    <div class="gallery">
+        <a href="detail-1.html" class="product-link">
+            <div class="pair-container">
+                <img src="202602141348 (1).JPG">
+                <img src="202602141348 (2).JPG">
+            </div>
+            <span class="view-more">View Details</span>
+        </a>
 
         </div>
-
-    <a href="index.html" class="back-link">← BACK TO TOP</a>
 
 </body>
 </html>
