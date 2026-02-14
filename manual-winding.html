@@ -8,49 +8,54 @@
         body { 
             font-family: "Helvetica Neue", Arial, sans-serif; 
             text-align: center; 
-            background-color: #fcfcfc; /* 3層目と変えて、ほんの少しだけグレーに */
+            background-color: #ffffff; /* 背景を白で統一 */
             color: #333;
             margin: 0;
             padding: 0;
         }
 
-        h1 { 
-            font-size: 20px;
-            letter-spacing: 3px;
+        /* ヘッダーリンク（トップへ戻る） */
+        .header-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
             margin: 50px 0 30px;
-            font-weight: normal;
         }
 
-        /* カタログ全体の余白 */
+        .header-link h1 { 
+            font-size: 20px;
+            letter-spacing: 3px;
+            font-weight: normal;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
         .gallery { 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            gap: 60px; /* 商品ごとの間隔を大きくあける */
-            padding: 20px 20px 100px; 
+            gap: 40px; /* セットごとの間隔 */
+            padding: 20px 0 100px; 
         }
 
-        /* 2枚セットを囲むリンク（ここが重要：幅を600pxに制限） */
         .product-link {
             text-decoration: none;
             color: inherit;
             display: block;
-            width: 85%; /* 画面の両端に余白を作る */
-            max-width: 500px; /* パソコンで見ても大きくしすぎない */
-            transition: transform 0.3s ease;
+            width: 100%; /* 横幅いっぱいまで許容 */
+            max-width: 800px; /* 前回の600pxより大きく設定 */
+            transition: opacity 0.3s ease;
         }
 
         .product-link:hover {
-            transform: translateY(-5px);
+            opacity: 0.8;
         }
 
-        /* 2枚の写真を囲む「白い箱」 */
+        /* 枠をなくし、写真をシームレスに並べる */
         .pair-container { 
             display: flex; 
-            background: white; 
-            padding: 10px; /* 写真の周りに白い縁（フチ）を作る */
-            border: 1px solid #eee; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* 3層目にはない影をつけて「ボタン」らしく */
+            background: #ffffff; 
+            overflow: hidden;
         }
 
         .pair-container img { 
@@ -60,19 +65,20 @@
             object-fit: cover;
         }
 
-        .view-more {
-            display: block;
-            font-size: 11px;
-            letter-spacing: 2px;
+        /* コピーライト（フッター）の設定 */
+        footer {
+            padding: 40px 0;
+            font-size: 10px;
+            letter-spacing: 1px;
             color: #999;
-            margin-top: 15px;
-            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
-    <h1>MANUAL WINDING</h1>
+    <a href="index.html" class="header-link">
+        <h1>MENS WATCH CATALOG</h1>
+    </a>
 
     <div class="gallery">
         <a href="detail-1.html" class="product-link">
@@ -80,10 +86,12 @@
                 <img src="202602141348 (1).JPG">
                 <img src="202602141348 (2).JPG">
             </div>
-            <span class="view-more">ITEM 01 - VIEW DETAILS</span>
-        </a>
+            </a>
+    </div>
 
-        </div>
+    <footer>
+        &copy; 2026 MENS WATCH CATALOG
+    </footer>
 
 </body>
 </html>
