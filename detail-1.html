@@ -51,35 +51,44 @@
             cursor: zoom-in;
         }
 
+        /* 写真下の案内文 */
+        .gallery-note {
+            font-size: 13px;
+            color: #888;
+            margin: 20px 0 0;
+            letter-spacing: 1px;
+        }
+
         .info-section {
-            padding: 60px 20px;
+            padding: 40px 20px 60px;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* キャプションを左寄せに変更 */
         .caption {
             font-size: 16px;
             line-height: 1.8;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #666;
-            text-align: left; /* センターから左寄せに調整 */
+            text-align: left;
         }
 
-        .buy-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            border: 1px solid #333;
+        /* テキスト形式のリンク用スタイル */
+        .text-link-area {
+            text-align: left; /* 左寄せ */
+            margin-top: 10px;
+        }
+
+        .direct-link {
             color: #333;
-            text-decoration: none;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-            font-size: 15px; /* 日本語に合わせて少し調整 */
+            text-decoration: underline; /* リンクであることを示す下線 */
+            font-size: 15px;
+            word-break: break-all; /* 長いURLが画面からはみ出さないように */
+            transition: opacity 0.3s;
         }
 
-        .buy-btn:hover {
-            background-color: #333;
-            color: #fff;
+        .direct-link:hover {
+            opacity: 0.6;
         }
 
         .promotion-text {
@@ -132,12 +141,12 @@
             <img src="202602141348 (13).JPG" onclick="window.open(this.src)">
             <img src="202602141348 (1).JPG" onclick="window.open(this.src)">
         </div>
+        
+        <p class="gallery-note">写真はクリックで拡大します</p>
     </div>
 
     <div class="info-section">
         <p class="caption">
-            写真はクリックで拡大します<br>
-        　　<br>
             この美しい時計は、裏蓋が透明なので、内部機構を見ることのできる とても美しい手巻時計です<br>
             <br>
             スペック<br>
@@ -150,11 +159,13 @@
             参考販売価格 ００００円～００００円程度<br>
             <br>
             販売サイト AliExpress（アリエクスプレス）<br>
-            
             <br>
-            下のボタンから AliExpressの公式ページ にてご確認いただけます
+            詳細は以下の公式ページにてご確認いただけます
         </p>
-        <a href="https://www.aliexpress.com/" class="buy-btn">AliExpressの公式ページを見る</a>
+        
+        <div class="text-link-area">
+            <a href="index.html" class="direct-link">https://www.aliexpress.com/item/example-watch-manual-winding</a>
+        </div>
     </div>
 
     <div class="promotion-text">
