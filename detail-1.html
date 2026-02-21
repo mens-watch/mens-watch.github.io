@@ -9,12 +9,11 @@
             font-family: "Helvetica Neue", Arial, sans-serif; 
             text-align: center; 
             background-color: #ffffff; 
-            color: #333; /* 文字の基本色 */
+            color: #333; 
             margin: 0;
             padding: 0;
         }
 
-        /* 3行で止める設定 ＋ 青色の設定 */
         .ali-link {
             display: -webkit-box;
             -webkit-box-orient: vertical;
@@ -23,10 +22,11 @@
             word-break: break-all; 
             line-height: 1.5; 
             text-align: left;
-            color: #0066c0 !important; /* 強制的にリンクの青色にする */
-            text-decoration: underline; /* 下線を引く */
+            color: #0066c0 !important; 
+            text-decoration: underline; 
             font-size: 15px;
-            margin-bottom: 25px; /* リンク同士の間隔 */
+            margin-bottom: 25px; 
+            display: block; /* 3行表示を安定させるために追加 */
         }
 
         .header-link { display: inline-block; text-decoration: none; color: #333; margin: 50px 0 30px; }
@@ -39,7 +39,6 @@
         .caption { font-size: 16px; line-height: 1.8; margin-bottom: 20px; color: #666; text-align: left; }
         .text-link-area { text-align: left; margin-top: 10px; }
         
-        /* その他のリンク用（似ている時計など） */
         .direct-link { color: #0066c0; text-decoration: underline; font-size: 15px; word-break: break-all; transition: opacity 0.3s; display: block; margin-bottom: 25px; }
         .direct-link:hover { opacity: 0.6; }
         
@@ -54,24 +53,24 @@
 
     <div class="gallery">
         <div class="pair-container">
-            <img src="images/automatic-20260218-2029/a (1).JPG" onclick="window.open(this.src)">
-            <img src="images/automatic-20260218-2029/a (2).JPG" onclick="window.open(this.src)">
+            <img id="watch-img-1" src="" onclick="window.open(this.src)">
+            <img id="watch-img-2" src="" onclick="window.open(this.src)">
         </div>
         <div class="pair-container">
-            <img src="images/automatic-20260218-2029/a (3).JPG" onclick="window.open(this.src)">
-            <img src="images/automatic-20260218-2029/a (4).JPG" onclick="window.open(this.src)">
+            <img id="watch-img-3" src="" onclick="window.open(this.src)">
+            <img id="watch-img-4" src="" onclick="window.open(this.src)">
         </div>
         <div class="pair-container">
-            <img src="images/automatic-20260218-2029/a (5).JPG" onclick="window.open(this.src)">
-            <img src="images/automatic-20260218-2029/a (6).JPG" onclick="window.open(this.src)">
+            <img id="watch-img-5" src="" onclick="window.open(this.src)">
+            <img id="watch-img-6" src="" onclick="window.open(this.src)">
         </div>
         <div class="pair-container">
-            <img src="images/automatic-20260218-2029/a (7).JPG" onclick="window.open(this.src)">
-            <img src="images/automatic-20260218-2029/a (8).JPG" onclick="window.open(this.src)">
+            <img id="watch-img-7" src="" onclick="window.open(this.src)">
+            <img id="watch-img-8" src="" onclick="window.open(this.src)">
         </div>
         <div class="pair-container">
-            <img src="images/automatic-20260218-2029/a (9).JPG" onclick="window.open(this.src)">
-            <img src="images/automatic-20260218-2029/a (10).JPG" onclick="window.open(this.src)">
+            <img id="watch-img-9" src="" onclick="window.open(this.src)">
+            <img id="watch-img-10" src="" onclick="window.open(this.src)">
         </div>
         
         <p class="gallery-note">写真はクリックで拡大します</p>
@@ -86,13 +85,9 @@
         
         <div class="text-link-area">
             <a href="#" class="ali-link">ショップ詳細ページ １  https://ja.aliexpress.com/item/1005008952243117.html?spm=a2g0o.imagesearchproductlist.main.17.2b7fOYIqOYIqpJ&algo_pvid=51e3031d-6787-4981-a90b-fab471479a8d&algo_exp_id=51e3031d-6787-4981-a90b-fab471479a8d&pdp_ext_f=%7B%22order%22%3A%2211%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21JPY%2111067%214870%21%21%2169.99%2130.80%21%402141131717716407304038034e6482%2112000047338975913%21sea%21JP%212735061992%21X%211%210%21n_tag%3A-29919%3Bd%3Ae0f2650%3Bm03_new_user%3A-29895&curPageLogUid=4C9lru5RSPP0&utparam-url=scene%3Aimage_search%7Cquery_from%3Apc_web_image_search%7Cx_object_id%3A1005008952243117%7C_p_origin_prod%3A</a>
-
             <a href="#" class="ali-link">ショップ詳細ページ ２</a>
-
             <a href="#" class="ali-link">ショップ詳細ページ ３</a>
-
             <a href="#" class="direct-link">似ている時計 オートマチック</a>
-
             <a href="#" class="direct-link">似ている時計 クオーツ</a>
         </div>
     </div>
@@ -100,6 +95,21 @@
     <footer>
         &copy; 2026 MENS WATCH CATALOG
     </footer>
+
+    <script>
+        // 【ここを書き換えるだけ！】
+        const folderName = "automatic-20260218-2029"; 
+
+        // 以下の部分は自動で処理されます
+        for (let i = 1; i <= 10; i++) {
+            const imgId = "watch-img-" + i;
+            const imgElement = document.getElementById(imgId);
+            if (imgElement) {
+                // images/フォルダ名/a (番号).JPG を自動生成
+                imgElement.src = "images/" + folderName + "/a (" + i + ").JPG";
+            }
+        }
+    </script>
 
 </body>
 </html>
