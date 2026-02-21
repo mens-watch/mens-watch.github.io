@@ -9,26 +9,27 @@
             font-family: "Helvetica Neue", Arial, sans-serif; 
             text-align: center; 
             background-color: #ffffff; 
-            color: #0066c0 !important;
+            color: #333; /* 文字の基本色 */
             margin: 0;
             padding: 0;
         }
-        .ali-link {
-  /* 3行で止めるための魔法の4行 */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; 
-  overflow: hidden;
 
-  /* URLが途中で改行されるようにする設定 */
-  word-break: break-all; 
-  
-  /* 見た目の調整 */
-  line-height: 1.5;      /* 行の間隔 */
-  max-height: 4.5em;    /* 1.5行 × 3行分 = 4.5 */
-  text-align: left;
-  display: block;        /* 幅いっぱいに広げる */
-}
+        /* 3行で止める設定 ＋ 青色の設定 */
+        .ali-link {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3; 
+            overflow: hidden;
+            word-break: break-all; 
+            line-height: 1.5; 
+            text-align: left;
+            display: block; 
+            color: #0066c0 !important; /* 強制的にリンクの青色にする */
+            text-decoration: underline; /* 下線を引く */
+            font-size: 15px;
+            margin-bottom: 25px; /* リンク同士の間隔 */
+        }
+
         .header-link { display: inline-block; text-decoration: none; color: #333; margin: 50px 0 30px; }
         .header-link h1 { font-size: 20px; letter-spacing: 3px; font-weight: normal; text-transform: uppercase; margin: 0; }
         .gallery { display: flex; flex-direction: column; align-items: center; width: 100%; }
@@ -38,9 +39,11 @@
         .info-section { padding: 40px 20px 60px; max-width: 600px; margin: 0 auto; }
         .caption { font-size: 16px; line-height: 1.8; margin-bottom: 20px; color: #666; text-align: left; }
         .text-link-area { text-align: left; margin-top: 10px; }
-        .direct-link { color: #0066c0; text-decoration: underline; font-size: 15px; word-break: break-all; transition: opacity 0.3s; }
+        
+        /* その他のリンク用（似ている時計など） */
+        .direct-link { color: #0066c0; text-decoration: underline; font-size: 15px; word-break: break-all; transition: opacity 0.3s; display: block; margin-bottom: 25px; }
         .direct-link:hover { opacity: 0.6; }
-        .promotion-text { font-size: 10px; color: #bbb; margin-top: 80px; letter-spacing: 1px; }
+        
         footer { padding: 20px 0 60px; font-size: 10px; letter-spacing: 1px; color: #999; }
     </style>
 </head>
@@ -71,7 +74,6 @@
             <img src="images/automatic-20260218-2029/a (9).JPG" onclick="window.open(this.src)">
             <img src="images/automatic-20260218-2029/a (10).JPG" onclick="window.open(this.src)">
         </div>
-
         
         <p class="gallery-note">写真はクリックで拡大します</p>
     </div>
@@ -80,18 +82,18 @@
         <p class="caption">
             下の AliExpress公式ページ にて最新価格や在庫状況 スペック などをご確認いただけます
             <br><br>
-            売切れの場合があるので複数のショップを掲載しています<br>
+            売切れの場合があるので複数のショップを掲載しています
         </p>
         
         <div class="text-link-area">
             <a href="#" class="ali-link">ショップ詳細ページ １  https://ja.aliexpress.com/item/1005008952243117.html?spm=a2g0o.imagesearchproductlist.main.17.2b7fOYIqOYIqpJ&algo_pvid=51e3031d-6787-4981-a90b-fab471479a8d&algo_exp_id=51e3031d-6787-4981-a90b-fab471479a8d&pdp_ext_f=%7B%22order%22%3A%2211%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21JPY%2111067%214870%21%21%2169.99%2130.80%21%402141131717716407304038034e6482%2112000047338975913%21sea%21JP%212735061992%21X%211%210%21n_tag%3A-29919%3Bd%3Ae0f2650%3Bm03_new_user%3A-29895&curPageLogUid=4C9lru5RSPP0&utparam-url=scene%3Aimage_search%7Cquery_from%3Apc_web_image_search%7Cx_object_id%3A1005008952243117%7C_p_origin_prod%3A</a>
-            <br><br><br>
-            <a href="#" class="direct-link">ショップ詳細ページ ２</a>
-            <br><br><br>
-            <a href="#" class="direct-link">ショップ詳細ページ ３</a>
-            <br><br><br>
+
+            <a href="#" class="ali-link">ショップ詳細ページ ２</a>
+
+            <a href="#" class="ali-link">ショップ詳細ページ ３</a>
+
             <a href="#" class="direct-link">似ている時計 オートマチック</a>
-            <br><br><br>
+
             <a href="#" class="direct-link">似ている時計 クオーツ</a>
         </div>
     </div>
