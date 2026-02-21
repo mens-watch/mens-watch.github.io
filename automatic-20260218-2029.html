@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Detail - MENS WATCH CATALOG</title>
+    <style>
+        body { 
+            font-family: "Helvetica Neue", Arial, sans-serif; 
+            text-align: center; 
+            background-color: #ffffff; 
+            color: #333; 
+            margin: 0;
+            padding: 0;
+        }
+
+        /* AliExpressリンク：3行で止める設定 */
+        .ali-link {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3; 
+            overflow: hidden;
+            word-break: break-all; 
+            line-height: 1.5; 
+            text-align: left;
+            color: #0066c0 !important; 
+            text-decoration: underline; 
+            font-size: 15px;
+            margin-bottom: 25px; 
+            /* 3行表示を維持するため display: block; は入れない */
+        }
+
+        .header-link { display: inline-block; text-decoration: none; color: #333; margin: 50px 0 30px; }
+        .header-link h1 { font-size: 20px; letter-spacing: 3px; font-weight: normal; text-transform: uppercase; margin: 0; }
+        .gallery { display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .pair-container { display: flex; width: 100%; max-width: 1000px; margin: 0 auto; }
+        .pair-container img { width: 50% !important; height: auto; display: block; object-fit: contain; background-color: #fff; cursor: zoom-in; }
+        .gallery-note { font-size: 13px; color: #888; margin: 20px 0 0; letter-spacing: 1px; }
+        .info-section { padding: 40px 20px 60px; max-width: 600px; margin: 0 auto; }
+        .caption { font-size: 16px; line-height: 1.8; margin-bottom: 20px; color: #666; text-align: left; }
+        .text-link-area { text-align: left; margin-top: 10px; }
+        
+        .direct-link { color: #0066c0; text-decoration: underline; font-size: 15px; word-break: break-all; transition: opacity 0.3s; display: block; margin-bottom: 25px; }
+        .direct-link:hover { opacity: 0.6; }
+        
+        footer { padding: 20px 0 60px; font-size: 10px; letter-spacing: 1px; color: #999; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="header-link">
+        <h1>MENS WATCH CATALOG</h1>
+    </a>
+
+    <div class="gallery">
+        <div class="pair-container">
+            <img id="watch-img-1" src="" onclick="window.open(this.src)">
+            <img id="watch-img-2" src="" onclick="window.open(this.src)">
+        </div>
+        <div class="pair-container">
+            <img id="watch-img-3" src="" onclick="window.open(this.src)">
+            <img id="watch-img-4" src="" onclick="window.open(this.src)">
+        </div>
+        <div class="pair-container">
+            <img id="watch-img-5" src="" onclick="window.open(this.src)">
+            <img id="watch-img-6" src="" onclick="window.open(this.src)">
+        </div>
+        <div class="pair-container">
+            <img id="watch-img-7" src="" onclick="window.open(this.src)">
+            <img id="watch-img-8" src="" onclick="window.open(this.src)">
+        </div>
+        <div class="pair-container">
+            <img id="watch-img-9" src="" onclick="window.open(this.src)">
+            <img id="watch-img-10" src="" onclick="window.open(this.src)">
+        </div>
+        
+        <p class="gallery-note">写真はクリックで拡大します</p>
+    </div>
+
+    <div class="info-section">
+        <p class="caption">
+            下の AliExpress公式ページ にて最新価格や在庫状況 スペック などをご確認いただけます
+            <br><br>
+            売切れの場合があるので複数のショップを掲載しています
+        </p>
+        
+        <div class="text-link-area">
+            <a href="#" class="ali-link">ショップ詳細ページ １（ここに長いURLを貼り付け）</a>
+            <a href="#" class="ali-link">ショップ詳細ページ ２</a>
+            <a href="#" class="ali-link">ショップ詳細ページ ３</a>
+            <a href="#" class="direct-link">似ている時計 オートマチック</a>
+            <a href="#" class="direct-link">似ている時計 クオーツ</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 MENS WATCH CATALOG
+    </footer>
+
+    <script>
+        // ================================================================
+        // 【魔法の1行：ファイル名からフォルダ名を自動で読み取ります】
+        // ================================================================
+        const folderName = window.location.pathname.split("/").pop().replace(".html", "");
+
+        // 1番から10番までの画像を自動セット
+        for (let i = 1; i <= 10; i++) {
+            const imgId = "watch-img-" + i;
+            const imgElement = document.getElementById(imgId);
+            if (imgElement) {
+                // images/フォルダ名/a (番号).JPG を自動生成
+                imgElement.src = "images/" + folderName + "/a (" + i + ").JPG";
+            }
+        }
+    </script>
+
+</body>
+</html>
