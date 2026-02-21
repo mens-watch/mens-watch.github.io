@@ -13,6 +13,22 @@
             margin: 0;
             padding: 0;
         }
+        .ali-link {
+  /* 3行で止めるための魔法の4行 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; 
+  overflow: hidden;
+
+  /* URLが途中で改行されるようにする設定 */
+  word-break: break-all; 
+  
+  /* 見た目の調整 */
+  line-height: 1.5;      /* 行の間隔 */
+  max-height: 4.5em;    /* 1.5行 × 3行分 = 4.5 */
+  text-align: left;
+  display: block;        /* 幅いっぱいに広げる */
+}
         .header-link { display: inline-block; text-decoration: none; color: #333; margin: 50px 0 30px; }
         .header-link h1 { font-size: 20px; letter-spacing: 3px; font-weight: normal; text-transform: uppercase; margin: 0; }
         .gallery { display: flex; flex-direction: column; align-items: center; width: 100%; }
