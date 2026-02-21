@@ -27,7 +27,7 @@
             text-decoration: underline; 
             font-size: 15px;
             margin-bottom: 25px; 
-            /* 注意：ここに display: block; を入れると3行設定が壊れるので入れないでください */
+            /* 3行表示を維持するため display: block; は入れない */
         }
 
         .header-link { display: inline-block; text-decoration: none; color: #333; margin: 50px 0 30px; }
@@ -98,10 +98,10 @@
     </footer>
 
     <script>
-        // ==========================================
-        // 【量産時、ここだけ書き換えてください！】
-        // ==========================================
-        const folderName = "automatic-20260218-2029"; 
+        // ================================================================
+        // 【魔法の1行：ファイル名からフォルダ名を自動で読み取ります】
+        // ================================================================
+        const folderName = window.location.pathname.split("/").pop().replace(".html", "");
 
         // 1番から10番までの画像を自動セット
         for (let i = 1; i <= 10; i++) {
