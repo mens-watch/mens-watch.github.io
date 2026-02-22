@@ -7,44 +7,46 @@
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #ffffff; /* 背景は全て白色 */
+            background-color: #ffffff;
             color: #333;
             margin: 0;
             padding: 0;
             text-align: center;
         }
+        /* タイトル部分：3層目と完全に統一 */
         header {
-            padding: 30px 0;
+            padding: 40px 0 20px 0;
         }
         h1 {
-            font-size: 24px;
-            letter-spacing: 4px;
+            font-size: 20px; /* 少し小さめに調整 */
+            letter-spacing: 0.2em; /* 文字の間隔を広げる */
             font-weight: 300;
+            color: #333;
+            text-transform: uppercase;
         }
         /* 商品一覧のレイアウト */
         .product-list {
-            max-width: 600px;
+            max-width: 800px; /* 横幅を少し広げて調整 */
             margin: 0 auto;
             padding-bottom: 50px;
         }
-        /* 1つの商品ブロック（上下に空間を確保） */
+        /* 商品ブロック：上下の間隔を調整 */
         .product-item {
-            margin-bottom: 60px; /* 時計ごとの上下の空間 */
-            padding: 10px;
+            margin-bottom: 30px; /* 上下の空きを少なめに設定 */
             display: block;
-            text-decoration: none; /* リンクの下線を消す */
+            text-decoration: none;
         }
-        /* 写真を左右に2つ並べる設定 */
+        /* 写真を左右に2つ並べ、隙間をなくす設定 */
         .image-container {
             display: flex;
             justify-content: center;
-            gap: 10px; /* 写真の間の隙間 */
+            gap: 0; /* 左右の隙間をゼロに */
         }
         .image-container img {
-            width: 45%; /* 左右に並ぶよう調整 */
-            max-width: 250px;
+            width: 50%; /* 2枚で100%になるように */
+            max-width: 300px;
             height: auto;
-            border: 1px solid #eee;
+            display: block; /* 画像下の余計な隙間も解消 */
         }
     </style>
 </head>
