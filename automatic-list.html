@@ -5,123 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MENS WATCH CATALOG - AUTOMATIC</title>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #ffffff;
-            color: #333;
+        body { 
+            font-family: "Helvetica Neue", Arial, sans-serif; 
+            text-align: center; 
+            background-color: #ffffff; 
+            color: #333; 
             margin: 0;
             padding: 0;
-            text-align: center;
         }
-        /* タイトル部分：3層目と完全に統一 */
-        header {
-            padding: 40px 0 20px 0;
+
+        /* ヘッダーリンク：商品ページと完全に同じ設定 */
+        .header-link { 
+            display: inline-block; 
+            text-decoration: none; 
+            color: #333; 
+            margin: 50px 0 30px; /* 商品ページと同じ余白 */
         }
-        h1 {
-            font-size: 20px; /* 少し小さめに調整 */
-            letter-spacing: 0.2em; /* 文字の間隔を広げる */
-            font-weight: 300;
-            color: #333;
-            text-transform: uppercase;
+        .header-link h1 { 
+            font-size: 20px; 
+            letter-spacing: 3px; /* 商品ページと同じ3px */
+            font-weight: normal; /* normal指定に変更 */
+            text-transform: uppercase; 
+            margin: 0; 
         }
+
         /* 商品一覧のレイアウト */
         .product-list {
-            max-width: 800px; /* 横幅を少し広げて調整 */
+            width: 100%;
+            max-width: 1000px; /* 画像ペアと同じ最大幅 */
             margin: 0 auto;
             padding-bottom: 50px;
         }
-        /* 商品ブロック：上下の間隔を調整 */
+
+        /* 商品ブロック：上下の間隔を商品ページっぽく短縮 */
         .product-item {
-            margin-bottom: 30px; /* 上下の空きを少なめに設定 */
+            margin-bottom: 30px; /* 時計ごとの上下の間隔 */
             display: block;
             text-decoration: none;
         }
-        /* 写真を左右に2つ並べ、隙間をなくす設定 */
+
+        /* 写真を左右に2つ並べ、隙間をゼロにする */
         .image-container {
             display: flex;
+            width: 100%;
             justify-content: center;
-            gap: 0; /* 左右の隙間をゼロに */
         }
         .image-container img {
-            width: 50%; /* 2枚で100%になるように */
-            max-width: 300px;
+            width: 50% !important; /* 商品ページと同じ50% */
             height: auto;
-            display: block; /* 画像下の余計な隙間も解消 */
+            display: block;
+            object-fit: contain;
+            background-color: #fff;
+        }
+
+        footer { 
+            padding: 20px 0 60px; 
+            font-size: 10px; 
+            letter-spacing: 1px; 
+            color: #999; 
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>MENS WATCH CATALOG</h1>
-</header>
-
-<div class="product-list">
-
-    <a href="automatic-20260218-2029.html" class="product-item">
-        <div class="image-container">
-            <img src="images/automatic-20260218-2029/a (1).JPG">
-            <img src="images/automatic-20260218-2029/a (2).JPG">
-        </div>
+    <a href="index.html" class="header-link">
+        <h1>MENS WATCH CATALOG</h1>
     </a>
 
-    <a href="automatic-20260219-0924.html" class="product-item">
-        <div class="image-container">
-            <img src="images/automatic-20260219-0924/a (1).JPG">
-            <img src="images/automatic-20260219-0924/a (2).JPG">
-        </div>
-    </a>
+    <div class="product-list">
 
-    <a href="automatic-20260219-0929.html" class="product-item">
-        <div class="image-container">
-            <img src="images/automatic-20260219-0929/a (1).JPG">
-            <img src="images/automatic-20260219-0929/a (2).JPG">
-        </div>
-    </a>
+        <a href="automatic-20260218-2029.html" class="product-item">
+            <div class="image-container">
+                <img src="images/automatic-20260218-2029/a (1).JPG">
+                <img src="images/automatic-20260218-2029/a (2).JPG">
+            </div>
+        </a>
 
-    <a href="automatic-20260219-0941.html" class="product-item">
-        <div class="image-container">
-            <img src="images/automatic-20260219-0941/a (1).JPG">
-            <img src="images/automatic-20260219-0941/a (2).JPG">
-        </div>
-    </a>
+        <a href="automatic-20260219-0924.html" class="product-item">
+            <div class="image-container">
+                <img src="images/automatic-20260219-0924/a (1).JPG">
+                <img src="images/automatic-20260219-0924/a (2).JPG">
+            </div>
+        </a>
 
-    <a href="automatic-20260219-1717.html" class="product-item">
-        <div class="image-container">
-            <img src="images/automatic-20260219-1717/a (1).JPG">
-            <img src="images/automatic-20260219-1717/a (2).JPG">
-        </div>
-    </a>
+        <a href="automatic-20260219-0929.html" class="product-item">
+            <div class="image-container">
+                <img src="images/automatic-20260219-0929/a (1).JPG">
+                <img src="images/automatic-20260219-0929/a (2).JPG">
+            </div>
+        </a>
 
-    <a href="automatic-20260220-0845.html" class="product-item">
-        <div class="image-container">
-            <img src="images/automatic-20260220-0845/a (1).JPG">
-            <img src="images/automatic-20260220-0845/a (2).JPG">
-        </div>
-    </a>
+        <a href="automatic-20260219-0941.html" class="product-item">
+            <div class="image-container">
+                <img src="images/automatic-20260219-0941/a (1).JPG">
+                <img src="images/automatic-20260219-0941/a (2).JPG">
+            </div>
+        </a>
 
-    <a href="automatic-20260220-0847.html" class="product-item">
-        <div class="image-container">
-            <img src="images/automatic-20260220-0847/a (1).JPG">
-            <img src="images/automatic-20260220-0847/a (2).JPG">
-        </div>
-    </a>
+        <a href="automatic-20260219-1717.html" class="product-item">
+            <div class="image-container">
+                <img src="images/automatic-20260219-1717/a (1).JPG">
+                <img src="images/automatic-20260219-1717/a (2).JPG">
+            </div>
+        </a>
 
-    <a href="automatic-20260220-0849.html" class="product-item">
-        <div class="image-container">
-            <img src="images/automatic-20260220-0849/a (1).JPG">
-            <img src="images/automatic-20260220-0849/a (2).JPG">
-        </div>
-    </a>
+        <a href="automatic-20260220-0845.html" class="product-item">
+            <div class="image-container">
+                <img src="images/automatic-20260220-0845/a (1).JPG">
+                <img src="images/automatic-20260220-0845/a (2).JPG">
+            </div>
+        </a>
 
-    <a href="automatic-20260220-0850.html" class="product-item">
-        <div class="image-container">
-            <img src="images/automatic-20260220-0850/a (1).JPG">
-            <img src="images/automatic-20260220-0850/a (2).JPG">
-        </div>
-    </a>
+        <a href="automatic-20260220-0847.html" class="product-item">
+            <div class="image-container">
+                <img src="images/automatic-20260220-0847/a (1).JPG">
+                <img src="images/automatic-20260220-0847/a (2).JPG">
+            </div>
+        </a>
 
-</div>
+        <a href="automatic-20260220-0849.html" class="product-item">
+            <div class="image-container">
+                <img src="images/automatic-20260220-0849/a (1).JPG">
+                <img src="images/automatic-20260220-0849/a (2).JPG">
+            </div>
+        </a>
+
+        <a href="automatic-20260220-0850.html" class="product-item">
+            <div class="image-container">
+                <img src="images/automatic-20260220-0850/a (1).JPG">
+                <img src="images/automatic-20260220-0850/a (2).JPG">
+            </div>
+        </a>
+
+    </div>
+
+    <footer>
+        &copy; 2026 MENS WATCH CATALOG
+    </footer>
 
 </body>
 </html>
