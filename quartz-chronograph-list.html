@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENS WATCH CATALOG - QUARTZ CHRONOGRAPH</title>
+    <style>
+        body { 
+            font-family: "Helvetica Neue", Arial, sans-serif; 
+            text-align: center; 
+            background-color: #ffffff; 
+            color: #333; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-link { 
+            display: inline-block; 
+            text-decoration: none; 
+            color: #333; 
+            margin: 50px 0 30px; 
+        }
+        .header-link h1 { 
+            font-size: 20px; 
+            letter-spacing: 3px; 
+            font-weight: normal; 
+            text-transform: uppercase; 
+            margin: 0; 
+        }
+
+        .product-list {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+        }
+
+        .product-item {
+            margin-bottom: 30px; 
+            display: block;
+            text-decoration: none;
+        }
+
+        .image-container {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 50% !important; 
+            height: auto;
+            display: block;
+            object-fit: contain;
+            background-color: #fff;
+        }
+
+        footer { 
+            padding: 20px 0 60px; 
+            font-size: 10px; 
+            letter-spacing: 1px; 
+            color: #999; 
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="header-link">
+        <h1>MENS WATCH CATALOG</h1>
+    </a>
+
+    <div class="product-list">
+
+        <script>
+            const items = [
+                "20260217-2041", "20260217-2046", "20260217-2052", "20260217-2104", "20260218-0916",
+                "20260218-1003", "20260218-1007", "20260218-1023", "20260218-1028", "20260218-1033",
+                "20260218-1041", "20260218-1052", "20260218-1105", "20260218-1110", "20260218-1115",
+                "20260218-1120", "20260218-1515", "20260218-1521", "20260218-1907", "20260218-2041",
+                "20260218-2045", "20260219-0933", "20260219-0937", "20260219-2115", "20260219-2117",
+                "20260219-2122", "20260219-2126", "20260219-2131", "20260219-2133", "20260220-0658",
+                "20260220-0700", "20260220-0752", "20260220-0836", "20260220-0838", "20260220-0853",
+                "20260220-0857", "20260220-0858", "20260220-0900", "20260220-0903", "20260220-0907",
+                "20260220-0909", "20260220-0910", "20260220-0914", "20260220-0943", "20260220-0953"
+            ];
+
+            const listContainer = document.querySelector('.product-list');
+            items.forEach(time => {
+                const folder = `quartz-chronograph-${time}`;
+                const html = `
+                    <a href="${folder}.html" class="product-item">
+                        <div class="image-container">
+                            <img src="images/${folder}/a (1).JPG">
+                            <img src="images/${folder}/a (2).JPG">
+                        </div>
+                    </a>`;
+                listContainer.insertAdjacentHTML('beforeend', html);
+            });
+        </script>
+
+    </div>
+
+    <footer>
+        &copy; 2026 MENS WATCH CATALOG
+    </footer>
+
+</body>
+</html>
