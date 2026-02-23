@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENS WATCH CATALOG - ALL PRODUCTS</title>
+    <style>
+        body { font-family: "Helvetica Neue", Arial, sans-serif; text-align: center; background-color: #fff; color: #333; margin: 0; padding: 0; }
+        .header-link { display: inline-block; text-decoration: none; color: #333; margin: 50px 0 30px; }
+        .header-link h1 { font-size: 20px; letter-spacing: 3px; font-weight: normal; text-transform: uppercase; margin: 0; }
+        
+        /* 商品リストのレイアウト */
+        #product-list { width: 100%; max-width: 1000px; margin: 0 auto; padding-bottom: 50px; }
+        .product-item { margin-bottom: 30px; display: block; text-decoration: none; }
+        .image-container { display: flex; width: 100%; justify-content: center; }
+        .image-container img { width: 50% !important; height: auto; display: block; object-fit: contain; }
+        
+        footer { padding: 20px 0 60px; font-size: 10px; letter-spacing: 1px; color: #999; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="header-link">
+        <h1>MENS WATCH CATALOG</h1>
+        <p style="font-size: 12px; color: #666; margin-top: 10px;">ALL PRODUCTS</p>
+    </a>
+
+    <div id="product-list">
+        </div>
+
+    <footer>&copy; 2026 MENS WATCH CATALOG</footer>
+
+    <script>
+        // 送っていただいた全リストをデータ化しました
+        const allItems = [
+            "automatic-20260218-2029", "automatic-20260219-0924", "automatic-20260219-0929", "automatic-20260219-0941", "automatic-20260219-1717", "automatic-20260220-0845", "automatic-20260220-0847", "automatic-20260220-0849", "automatic-20260220-0850",
+            "automatic-bezel-20260218-0945", "automatic-bezel-20260218-1000", "automatic-bezel-20260218-1540", "automatic-bezel-20260218-1543", "automatic-bezel-20260218-1553", "automatic-bezel-20260218-1556", "automatic-bezel-20260220-1047", "automatic-bezel-20260220-1055", "automatic-bezel-20260220-1106", "automatic-bezel-20260220-1125",
+            "automatic-bezel-gmt-20260218-1548", "automatic-bezel-gmt-20260219-0946", "automatic-bezel-gmt-20260219-0951", "automatic-bezel-gmt-20260219-0954", "automatic-bezel-gmt-20260219-0956", "automatic-bezel-gmt-20260219-1056", "automatic-bezel-gmt-20260219-1059", "automatic-bezel-gmt-20260219-1104", "automatic-bezel-gmt-20260219-1107",
+            "digital-20260218-1126", "digital-20260220-1027",
+            "digital-analog-20260218-1130", "digital-analog-20260218-1143", "digital-analog-20260218-1150", "digital-analog-20260220-1018", "digital-analog-20260220-1020", "digital-analog-20260220-1022", "digital-analog-20260220-1033", "digital-analog-20260220-1037",
+            "digital-analog-bezel-20260220-1013",
+            "manual-20260217-2018",
+            "quartz-20260218-1138", "quartz-20260218-2019", "quartz-20260218-2024", "quartz-20260219-1706", "quartz-20260219-1714", "quartz-20260219-1745", "quartz-20260220-1007",
+            "quartz-bezel-20260218-0926", "quartz-bezel-20260218-0929", "quartz-bezel-20260218-0939", "quartz-bezel-20260218-1009", "quartz-bezel-20260219-1109", "quartz-bezel-20260219-1724", "quartz-bezel-20260219-1727", "quartz-bezel-20260220-0918", "quartz-bezel-20260220-0919", "quartz-bezel-20260220-0923", "quartz-bezel-20260220-0936", "quartz-bezel-20260220-0939", "quartz-bezel-20260220-0955", "quartz-bezel-20260220-0958", "quartz-bezel-20260220-1003", "quartz-bezel-20260220-1009",
+            "quartz-chronograph-20260217-2041", "quartz-chronograph-20260217-2046", "quartz-chronograph-20260217-2052", "quartz-chronograph-20260217-2104", "quartz-chronograph-20260218-0916", "quartz-chronograph-20260218-1003", "quartz-chronograph-20260218-1007", "quartz-chronograph-20260218-1023", "quartz-chronograph-20260218-1028", "quartz-chronograph-20260218-1033", "quartz-chronograph-20260218-1041", "quartz-chronograph-20260218-1052", "quartz-chronograph-20260218-1105", "quartz-chronograph-20260218-1110", "quartz-chronograph-20260218-1115", "quartz-chronograph-20260218-1120", "quartz-chronograph-20260218-1515", "quartz-chronograph-20260218-1521", "quartz-chronograph-20260218-1907", "quartz-chronograph-20260218-2041", "quartz-chronograph-20260218-2045", "quartz-chronograph-20260219-0933", "quartz-chronograph-20260219-0937", "quartz-chronograph-20260219-2115", "quartz-chronograph-20260219-2117", "quartz-chronograph-20260219-2122", "quartz-chronograph-20260219-2126", "quartz-chronograph-20260219-2131", "quartz-chronograph-20260219-2133", "quartz-chronograph-20260220-0658", "quartz-chronograph-20260220-0700", "quartz-chronograph-20260220-0752", "quartz-chronograph-20260220-0836", "quartz-chronograph-20260220-0838", "quartz-chronograph-20260220-0853", "quartz-chronograph-20260220-0857", "quartz-chronograph-20260220-0858", "quartz-chronograph-20260220-0900", "quartz-chronograph-20260220-0903", "quartz-chronograph-20260220-0907", "quartz-chronograph-20260220-0909", "quartz-chronograph-20260220-0910", "quartz-chronograph-20260220-0914", "quartz-chronograph-20260220-0943", "quartz-chronograph-20260220-0953",
+            "quartz-chronograph-bezel-20260218-1012", "quartz-chronograph-bezel-20260218-2037", "quartz-chronograph-bezel-20260218-2051", "quartz-chronograph-bezel-20260219-1734",
+            "sutorappu-20260220-1113",
+            "tool-20260220-1042"
+        ];
+
+        const container = document.getElementById('product-list');
+
+        allItems.forEach(id => {
+            const a = document.createElement('a');
+            a.href = `${id}.html`;
+            a.className = 'product-item';
+            
+            a.innerHTML = `
+                <div class="image-container">
+                    <img src="images/${id}/a (1).JPG" loading="lazy">
+                    <img src="images/${id}/a (2).JPG" loading="lazy">
+                </div>
+            `;
+            container.appendChild(a);
+        });
+    </script>
+
+</body>
+</html>
