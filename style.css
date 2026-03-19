@@ -1,0 +1,37 @@
+/* 2層目（リストページ）のデザイン指示書 */
+.list-page {background-color: #ffffff !important;
+    /* ここにリストページ専用のデザインを書く */
+}
+
+/* 3層目（詳細ページ）のデザイン指示書 */
+.detail-page {background-color: #ffffff !important;
+    /* ここに詳細ページ専用のデザインを書く */
+}
+
+/* Google翻訳のメニューを1列に強制する設定 */
+.goog-te-menu2 {
+    max-width: 250px !important; /* 横幅を狭くして2列にさせない */
+    overflow-y: auto !important; /* 縦に長くなったらスクロールできるようにする */
+}
+
+.goog-te-menu2 table, 
+.goog-te-menu2 td {
+    display: block !important; /* 表形式をやめて縦に並べる */
+    width: 100% !important;
+}
+
+/* Google翻訳のメニューを「絶対1列」に強制する */
+.goog-te-menu2 {
+    max-width: 100% !important; 
+    width: auto !important;
+}
+
+/* 中にあるテーブルのセル（td）を、横並びから縦並びに変える */
+.goog-te-menu2 table, 
+.goog-te-menu2 tbody, 
+.goog-te-menu2 tr, 
+.goog-te-menu2 td {
+    display: block !important; /* これが1列にする魔法の言葉です */
+    width: 100% !important;
+    box-sizing: border-box !important;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>時計リスト - 動作テスト</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
+        .controls { background: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        .card img { max-width: 100%; height: auto; border-radius: 4px; background: #eee; }
+        .price { font-size: 1.2em; color: #e44d26; font-weight: bold; margin: 10px 0; }
+        .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+        .tag { background: #eee; font-size: 0.8em; padding: 2px 8px; border-radius: 10px; }
+        .btn-sort { margin-right: 10px; padding: 5px 15px; cursor: pointer; }
+        .filter-group { margin-top: 10px; }
+        .filter-btn { margin: 2px; padding: 3px 10px; font-size: 0.8em; cursor: pointer; }
+        .active { background: #007bff; color: white; border: none; }
+    </style>
+</head>
+<body>
+
+    <h2>商品一覧 動作テスト</h2>
+
+    <div class="controls">
+        <div>
+            <strong>並べ替え:</strong>
+            <button class="btn-sort" onclick="sortItems('asc')">価格の安い順</button>
+            <button class="btn-sort" onclick="sortItems('desc')">価格の高い順</button>
+        </div>
+        <div class="filter-group" id="filterGroup">
+            <strong>絞り込み:</strong>
+            <button class="filter-btn active" onclick="filterItems('すべて')">すべて</button>
+            </div>
+    </div>
+
+    <div class="grid" id="productGrid"></div>
+
+    <script>
+        // あなたが作ったテキストデータ（ここを増やすだけで反映されます）
+        const rawData = `
+>automatic-20260218-2029
+price:5000
+feature:オートマチック,ストラップ,ブレスレット,日付,カレンダー
+link1:https://ja.aliexpress.com/item/1005010545631744.html
+
+>automatic-20260219-0924
+price:6500
+feature:オートマチック,ストラップ,シースルー,日付無し
+link1:https://ja.aliexpress.com/item/1005007383165254.html
+
+>automatic-20260219-0929
+price:6500
+feature:オートマチック,ストラップ,シースルー,日付無し
+link1:https://ja.aliexpress.com/item/1005007383165254.html
+        `;
+
+        // テキストを解析してデータに変換する関数
+        function parseData(text) {
+            const parts = text.split('>').filter(p => p.trim());
+            return parts.map(part => {
+                const lines = part.trim().split('\n');
+                const id = lines[0].trim();
+                const data = { id: id, feature: [] };
+                lines.forEach(line => {
+                    if (line.includes(':')) {
+                        const [key, val] = line.split('｜');
+                        const value = val.trim();
+                        if (key === 'price') data.price = parseInt(value) || 0;
+                        if (key === 'feature') data.feature = value.split(',').filter(f => f);
+                    }
+                });
+                return data;
+            });
+        }
+
+        let products = parseData(rawData);
+
+        // 画面に表示する関数
+        function displayProducts(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            items.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <img src="images/${p.id}/a (1).JPG" alt="画像">
+                    <div style="font-size:0.8em; color:gray; margin-top:5px;">${p.id}</div>
+                    <div class="price">¥${p.price.toLocaleString()}</div>
+                    <div class="tags">
+                        ${p.feature.map(f => `<span class="tag">${f}</span>`).join('')}
+                    </div>
+                    <button style="margin-top:10px;" onclick="window.location.href='${p.id}.html'">詳細を見る</button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // 絞り込みボタンを自動生成する関数
+        function createFilterButtons() {
+            const allFeatures = new Set();
+            products.forEach(p => p.feature.forEach(f => allFeatures.add(f)));
+            const group = document.getElementById('filterGroup');
+            allFeatures.forEach(f => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.textContent = f;
+                btn.onclick = () => filterItems(f, btn);
+                group.appendChild(btn);
+            });
+        }
+
+        // 並べ替え機能
+        function sortItems(order) {
+            const sorted = [...products].sort((a, b) => 
+                order === 'asc' ? a.price - b.price : b.price - a.price
+            );
+            displayProducts(sorted);
+        }
+
+        // 絞り込み機能
+        function filterItems(feature, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if(btn) btn.classList.add('active');
+            const filtered = feature === 'すべて' ? products : products.filter(p => p.feature.includes(feature));
+            displayProducts(filtered);
+        }
+
+        // 初期表示
+        displayProducts(products);
+        createFilterButtons();
+    </script>
+</body>
+</html>
