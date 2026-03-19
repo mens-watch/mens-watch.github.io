@@ -14,8 +14,9 @@
             padding: 0;
         }
 
+        /* AliExpressリンク：3行で止める設定 */
         .ali-link {
-            
+            display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3; 
             overflow: hidden;
@@ -26,6 +27,7 @@
             text-decoration: underline; 
             font-size: 15px;
             margin-bottom: 25px; 
+            /* 3行表示を維持するため display: block; は入れない */
         }
 
         .header-link { display: inline-block; text-decoration: none; color: #333; margin: 50px 0 30px; }
@@ -44,7 +46,6 @@
         footer { padding: 20px 0 60px; font-size: 10px; letter-spacing: 1px; color: #999; }
     </style>
 <link rel="stylesheet" href="style.css">
-</head>
 <body class="detail-page">
 
     <a href="index.html" class="header-link">
@@ -77,7 +78,13 @@
     </div>
 
     <div class="info-section">
-        <p class="caption" id="common-caption"></p>
+        <p class="caption">
+            詳細や現在価格は 下のリンクからどうぞ
+            <br><br>
+            売切れの場合があるので複数のショップを掲載しています
+            <br><br>
+            現在、リンク準備中です（このページにはプロモーションが含まれます）
+        </p>
         
         <div class="text-link-area">
             <a href="#" class="ali-link">■</a>
@@ -91,10 +98,6 @@
             <a href="#" class="ali-link">■</a>
             <a href="#" class="ali-link">■</a>
 
-            <a href="#" class="ali-link">■</a>
-            <a href="#" class="ali-link">■</a>
-            <a href="#" class="ali-link">■</a>
-            <a href="#" class="ali-link">■</a>
         </div>
     </div>
 
@@ -102,58 +105,22 @@
         &copy; 2026 MENS WATCH CATALOG
     </footer>
 
-    <script src="data.js"></script>
-
     <script>
-        // 1. ファイル名からIDを取得
+        // ================================================================
+        // 【魔法の1行：ファイル名からフォルダ名を自動で読み取ります】
+        // ================================================================
         const folderName = window.location.pathname.split("/").pop().replace(".html", "");
 
-        // 2. 画像の自動セット
+        // 1番から10番までの画像を自動セット
         for (let i = 1; i <= 10; i++) {
             const imgId = "watch-img-" + i;
             const imgElement = document.getElementById(imgId);
             if (imgElement) {
+                // images/フォルダ名/a (番号).JPG を自動生成
                 imgElement.src = "images/" + folderName + "/a (" + i + ").JPG";
-            }
-        }
-
-        // 3. 共通の説明文を表示する
-        const captionElement = document.getElementById("common-caption");
-        if (captionElement && typeof commonDescription !== 'undefined') {
-            captionElement.innerHTML = commonDescription;
-        }
-
-       // 4. data.jsからリンクデータを読み込んでセット
-        if (typeof commonRawData !== 'undefined') {
-            const sections = commonRawData.split('>');
-            const myDataStr = sections.find(s => s.trim().startsWith(folderName));
-
-            if (myDataStr) {
-                const lines = myDataStr.split('\n');
-                const links = document.querySelectorAll('.ali-link');
-
-                lines.forEach(line => {
-                    if (line.startsWith('link')) {
-                        const parts = line.split('｜');
-                        if (parts.length >= 3) {
-                            const linkKey = parts[0].trim();
-                            const label = parts[1].trim();
-                            const url = parts[2].trim();
-                            
-                            const linkIndex = parseInt(linkKey.replace('link', '')) - 1;
-
-                            if (links[linkIndex] && url && url !== "") {
-                                links[linkIndex].href = url;
-                                links[linkIndex].textContent = label ? label : "ショップ詳細ページ " + (linkIndex + 1);
-                                links[linkIndex].style.display = "block";
-                            }
-                        }
-                    }
-                });
             }
         }
     </script>
 
-    <script src="google-translate.js"></script>
-</body>
+<script src="google-translate.js"></script>
 </html>
