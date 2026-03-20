@@ -27,7 +27,7 @@
             display: flex !important; 
             align-items: center;
             width: 100%; 
-            max-width: 300px; /* 画像が入るので少し幅を広げました */
+            max-width: 300px;
             padding: 0 !important; 
             border: 1px solid #ddd; 
             background: #fff; 
@@ -71,6 +71,9 @@
         }
         
         footer { text-align: center; padding: 40px 20px 20px; background-color: #fff; }
+
+        /* 翻訳メニューがはみ出さないための最小限の指示 */
+        .goog-te-menu-frame { max-height: 100% !important; overflow-y: auto !important; }
     </style>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -182,14 +185,6 @@
 
 <div id="google_translate_element" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; background: #fff; border: 1px solid #ccc; padding: 5px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"></div>
 
-<style>
-  /* 💡 ここに高さ制限を解除する命令を追加しました */
-  iframe.goog-te-menu-frame { 
-    max-height: 800px !important; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-  }
-</style>
-
 <script type="text/javascript">
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
@@ -199,23 +194,12 @@ function googleTranslateElementInit() {
         autoDisplay: true,
         multilanguagePage: true
     }, 'google_translate_element');
-
-    // ⬇️ メニュー出現を監視して高さを強制上書きするコードを追加
-    const fixHeight = setInterval(() => {
-        const menuFrame = document.querySelector('.goog-te-menu-frame');
-        if (menuFrame) {
-            menuFrame.style.maxHeight = '800px';
-            menuFrame.style.height = '800px';
-            clearInterval(fixHeight);
-        }
-    }, 200);
-    setTimeout(() => clearInterval(fixHeight), 5000);
 }
 
 window.onpageshow = function(event) {
-  if (event.persisted) {
-    window.location.reload();
-  }
+    if (event.persisted) {
+        window.location.reload();
+    }
 };
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
