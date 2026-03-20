@@ -192,13 +192,24 @@
 
 <script type="text/javascript">
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'ja',
-    includedLanguages: 'en,zh-CN,ko,ru,es,fr,de,it,pt,th,iw,pl,nl,tr,vi,uk,ar,cs,ms,id,sv',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: true,
-    multilanguagePage: true
-  }, 'google_translate_element');
+    new google.translate.TranslateElement({
+        pageLanguage: 'ja',
+        includedLanguages: 'en,zh-CN,ko,ru,es,fr,de,it,pt,th,iw,pl,nl,tr,vi,uk,ar,cs,ms,id,sv',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: true,
+        multilanguagePage: true
+    }, 'google_translate_element');
+
+    // ⬇️ メニュー出現を監視して高さを強制上書きするコードを追加
+    const fixHeight = setInterval(() => {
+        const menuFrame = document.querySelector('.goog-te-menu-frame');
+        if (menuFrame) {
+            menuFrame.style.maxHeight = '800px';
+            menuFrame.style.height = '800px';
+            clearInterval(fixHeight);
+        }
+    }, 200);
+    setTimeout(() => clearInterval(fixHeight), 5000);
 }
 
 window.onpageshow = function(event) {
