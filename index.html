@@ -180,9 +180,15 @@
     </p>
 </footer>
 
-
-
 <div id="google_translate_element" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; background: #fff; border: 1px solid #ccc; padding: 5px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"></div>
+
+<style>
+  /* 💡 ここに高さ制限を解除する命令を追加しました */
+  iframe.goog-te-menu-frame { 
+    max-height: 800px !important; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+  }
+</style>
 
 <script type="text/javascript">
 function googleTranslateElementInit() {
@@ -195,7 +201,6 @@ function googleTranslateElementInit() {
   }, 'google_translate_element');
 }
 
-// ⬇️ スマホの「戻る」対策：ページが表示されたら強制的に再読み込みさせる命令
 window.onpageshow = function(event) {
   if (event.persisted) {
     window.location.reload();
@@ -203,6 +208,5 @@ window.onpageshow = function(event) {
 };
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
 </body>
 </html>
